@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/music.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+   
 </head>
 
+<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+
 <body>
-    <h1>Hello Django !</h1>
+    <header>Hello Django</header>
+
+    <midi-player
+    src="{% static 'music/accompaniment.mid' %}"
+    sound-font visualizer="#myVisualizer">
+    </midi-player>
+    <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+
+
 </body>
 
 </html>
