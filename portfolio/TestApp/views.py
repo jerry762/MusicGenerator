@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 from pathlib import Path
@@ -169,14 +170,17 @@ class MelodyGenerator:
 def test(request):
   return HttpResponse("hello world")
 
+@csrf_exempt
 def index(request):
+  return render(request,'index.html')
+
+@csrf_exempt
+def predict_lstm(request):
   mg = MelodyGenerator()
   seed = "67 _ 72 _ 67 _ 65 _ 67 _ _ _"
   melody = mg.generate_melody(seed, 500, SEQUENCE_LENGTH, 0.50)
   mg.save_melody(melody)
   return render(request,'index.html')
-
-
 
 
 

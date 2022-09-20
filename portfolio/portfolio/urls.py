@@ -20,4 +20,5 @@ from TestApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name="index"),
+    path('predict_lstm',views.predict_lstm, name="predict_lstm"),
 ]

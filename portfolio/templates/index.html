@@ -23,6 +23,15 @@
     </midi-player>
     <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
 
+    <form method="post" enctype="multipart/form-data" action="predict_lstm">
+    {% csrf_token %}
+
+
+
+        <input type="submit" value="Predict">
+    </form>
+      
+
 
 </body>
 
