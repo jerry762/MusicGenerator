@@ -9,28 +9,31 @@
     <title>Document</title>
     <link rel="icon" type="image/x-icon" href="{% static 'images/music.ico' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-   
+
 </head>
 
-<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+<script
+    src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
 
 <body>
-    <header>Hello Django</header>
+    <header>Music Generator</header>
 
-    <midi-player
-    src="{% static 'music/output.mid' %}"
-    sound-font visualizer="#myVisualizer">
-    </midi-player>
-    <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+    <div>
+        <midi-player src="{% static 'music/output.mid' %}" sound-font visualizer="#myVisualizer">
+        </midi-player>
+        <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+    </div>
+
+
 
     <form method="post" enctype="multipart/form-data" action="predict_lstm">
-    {% csrf_token %}
+        {% csrf_token %}
 
 
 
         <input type="submit" value="Predict">
     </form>
-      
+
 
 
 </body>

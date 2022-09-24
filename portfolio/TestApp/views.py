@@ -4,43 +4,26 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 from pathlib import Path
-import music21 as m21
 import json
+import music21 as m21
 import numpy as np
-import tensorflow.keras as keras
+import tensorflow as tf
 
 APP_BASE_DIR = Path(__file__).resolve().parent
 SAVA_MIDI_DIR = Path.joinpath(Path(__file__).resolve().parent.parent, 'static_test/music/output.mid')
-
 MAPPING_PATH = Path.joinpath(APP_BASE_DIR, 'mapping/mapping.json')
-SEQUENCE_LENGTH = 64
-ACCEPTABLE_DURATIONS = [
-    0.25, # 16th note
-    0.5, # 8th note
-    0.75,
-    1.0, # quarter note
-    1.5,
-    2, # half note
-    3,
-    4 # whole note
-]
+SAVE_LSTM_MODEL_PATH = Path.joinpath(APP_BASE_DIR, 'models/model.h5')
 
-OUTPUT_UNITS = 47
-NUM_UNITS = [256]
-LOSS = "sparse_categorical_crossentropy"
-LEARNING_RATE = 0.001
-EPOCHS = 40
-BATCH_SIZE = 64
-
+SEQUENCE_LENGTH = 64 * 2
 
 class MelodyGenerator:
     """A class that wraps the LSTM model and offers utilities to generate melodies."""
 
-    def __init__(self, model_path = Path.joinpath(APP_BASE_DIR, 'models/model.h5')):
+    def __init__(self, model_path = SAVE_LSTM_MODEL_PATH):
         """Constructor that initialises TensorFlow model"""
 
         self.model_path = model_path
-        self.model = keras.models.load_model(model_path)
+        self.model = tf.keras.models.load_model(model_path)
 
         with open(MAPPING_PATH, "r") as fp:
             self._mappings = json.load(fp)
@@ -74,7 +57,7 @@ class MelodyGenerator:
             seed = seed[-max_sequence_length:]
 
             # one-hot encode the seed
-            onehot_seed = keras.utils.to_categorical(seed, num_classes=len(self._mappings))
+            onehot_seed = tf.keras.utils.to_categorical(seed, num_classes=len(self._mappings))
             # (1, max_sequence_length, num of symbols in the vocabulary)
             onehot_seed = onehot_seed[np.newaxis, ...]
 
@@ -117,7 +100,7 @@ class MelodyGenerator:
         return index
 
 
-    def save_melody(self, melody, step_duration=0.25, format="midi", file_name=SAVA_MIDI_DIR):
+    def save_melody(self, melody, step_duration=0.25, format="midi", file_name = SAVA_MIDI_DIR):
         """Converts a melody into a MIDI file
 
         :param melody (list of str):
@@ -165,6 +148,7 @@ class MelodyGenerator:
         # write the m21 stream to a midi file
         stream.write(format, file_name)
 
+
     
 
 def test(request):
@@ -176,10 +160,17 @@ def index(request):
 
 @csrf_exempt
 def predict_lstm(request):
+
   mg = MelodyGenerator()
-  seed = "67 _ 72 _ 67 _ 65 _ 67 _ _ _"
-  melody = mg.generate_melody(seed, 500, SEQUENCE_LENGTH, 0.50)
+
+  seed = "67 _ 67 _ 67 _ _ 65 64 _ 64 _ 64 _ _"
+  seed2 = "67 _ _ _ _ _ 65 _ 64 _ 62 _ 60 _ _ _"
+  seed3 = "67 _ 72 _ 67 _ 65 _ 67 _ _ _"
+  
+  melody = mg.generate_melody(seed3, 500, SEQUENCE_LENGTH, 0.3)
   mg.save_melody(melody)
+ 
+
   return render(request,'index.html')
 
 
