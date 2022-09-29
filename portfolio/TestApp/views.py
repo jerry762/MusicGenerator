@@ -14,7 +14,7 @@ SAVA_MIDI_DIR = Path.joinpath(Path(__file__).resolve().parent.parent, 'static_te
 MAPPING_PATH = Path.joinpath(APP_BASE_DIR, 'mapping/mapping.json')
 SAVE_LSTM_MODEL_PATH = Path.joinpath(APP_BASE_DIR, 'models/model.h5')
 
-SEQUENCE_LENGTH = 64 * 2
+SEQUENCE_LENGTH = 64
 
 class MelodyGenerator:
     """A class that wraps the LSTM model and offers utilities to generate melodies."""
@@ -149,7 +149,7 @@ class MelodyGenerator:
         stream.write(format, file_name)
 
 
-    
+
 
 def test(request):
   return HttpResponse("hello world")
@@ -167,7 +167,7 @@ def predict_lstm(request):
   seed2 = "60 _ 60 _ 67 _ 67 _ 69 _ 69 _ 67 _"
   seed3 = "67 _ 72 _ 67 _ 65 _ 67 _ _ _"
   
-  melody = mg.generate_melody(seed3, 500, SEQUENCE_LENGTH, 0.3)
+  melody = mg.generate_melody(seed3, 500, SEQUENCE_LENGTH * 2, 0.3)
   mg.save_melody(melody)
  
 
