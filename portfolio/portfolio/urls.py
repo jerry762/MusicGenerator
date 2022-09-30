@@ -20,5 +20,8 @@ from TestApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name="index"),
-    path('predict_lstm',views.predict_lstm, name="predict_lstm"),
+    path('music_generation/predict_lstm',views.predict_lstm, name="predict_lstm"),
+    path('music_dataset/',views.music_dataset, name="music_dataset"),
+    path('music_generation/',views.music_generation, name="music_generation"),
+    path('music_home/',views.music_home, name="music_home"),
 ]

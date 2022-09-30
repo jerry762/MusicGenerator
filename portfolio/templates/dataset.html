@@ -5,9 +5,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="ai music generation" />
+    <meta name="description" content="music dataset" />
     <meta name="author" content="jerry" />
-    <title>AI Music Generation</title>
+    <title>Music Dataset</title>
     <link rel="icon" type="image/x-icon" href="{% static 'images/music.ico' %}" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -43,13 +43,13 @@
         </div>
     </nav>
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('{% static 'images/head_music.jpg' %}')">
+    <header class="masthead" style="background-image: url('{% static 'images/dataset_header.jpg' %}')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <div class="page-heading">
-                        <h1>AI Music Generation</h1>
-                        <span class="subheading fs-6">組員: 劉冠岑 張守元 柯尚維</span>
+                    <div class="site-heading">
+                        <h1>Music Dataset</h1>
+                        <!-- <span class="subheading">A Blog Theme by Start Bootstrap</span> -->
                     </div>
                 </div>
             </div>
@@ -60,21 +60,65 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <h2 class="fs-3">概述: </h2>
+                    <h2 class="fs-2 fw-bold">AI Model: RNN-LSTM</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
+                        voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
+                        ducimus consectetur?</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque
                         architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae
-                        voluptatum in officia voluptas voluptatibus, minus!</p>
-                    <h2 class="fs-3">動機: </h2>
-                    <p>我們這組的組員平常念書時都有聽鋼琴音樂的習慣，這讓我們產生了自己創作音樂的想法，但繁複且艱深的樂理觀念使我們怯步，這時我們想到了曾經在AI程式設計課程中學過可以用LSTM和Transformer來生成音樂，這也使沒有專業知識的我們可以順利完成作曲的目標。
-                    </p>
-                    <h2 class="fs-3">研究: </h2>
+                        voluptatum
+                        in officia voluptas voluptatibus, minus!</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi
-                        aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste
-                        neque sit tempora!</p>
+                        aliquid
+                        ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque
+                        sit
+                        tempora!</p>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2 class="fs-2 fw-bold">AI Model: Music-Transformer</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
+                        voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
+                        ducimus consectetur?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque
+                        architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae
+                        voluptatum
+                        in officia voluptas voluptatibus, minus!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi
+                        aliquid
+                        ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque
+                        sit
+                        tempora!</p>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2 class="fs-2 fw-bold">Songs Dataset: Transformer</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
+                        voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
+                        ducimus consectetur?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque
+                        architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae
+                        voluptatum
+                        in officia voluptas voluptatibus, minus!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi
+                        aliquid
+                        ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque
+                        sit
+                        tempora!</p>
                 </div>
             </div>
         </div>
+        <h2 class="fs-2 fw-bold  text-center">Songs Dataset: LSTM</h2>
+
+
+        <h2 class="fs-2 fw-bold  text-center">Songs Dataset: Transformer</h2>
+
+
+
+
     </main>
+
+
+
+
     <!-- Footer-->
     <footer class="border-top">
         <div class="container px-4 px-lg-5">
@@ -106,6 +150,9 @@
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core midi player JS-->
+    <script
+        src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
     <!-- Core theme JS-->
     <script src="{% static 'js/scripts.js' %}"></script>
 </body>

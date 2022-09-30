@@ -170,12 +170,19 @@ def predict_lstm(request):
   melody = mg.generate_melody(seed3, 500, SEQUENCE_LENGTH * 2, 0.3)
   mg.save_melody(melody)
  
+  return render(request,'generation.html')
 
+@csrf_exempt
+def music_dataset(request):
+  return render(request,'dataset.html')
+
+@csrf_exempt
+def music_generation(request):
+  return render(request,'generation.html')
+
+@csrf_exempt
+def music_home(request):
   return render(request,'index.html')
-
-
-
-
 
 
   
