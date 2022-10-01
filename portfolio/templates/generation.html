@@ -34,9 +34,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'music_home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'music_dataset' %}">DataSet</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'music_generation' %}">Generation</a>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'music_home' %}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{% url 'music_dataset' %}">DataSet</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{% url 'music_generation' %}">Generation</a>
                     </li>
                 </ul>
             </div>
@@ -118,7 +121,8 @@
                                         class="bi bi-collection"></i></div>
                                 <h2 class="fs-4 fw-bold">LSTM</h2>
                                 <p class="mb-0">Folksongs from Germany</p>
-                                <midi-player src="{% static 'music/Germany_lstm.mid' %}" sound-font visualizer="#myVisualizer1">
+                                <midi-player src="{% static 'music/Germany_lstm.mid' %}" sound-font
+                                    visualizer="#myVisualizer1">
                                 </midi-player>
                             </div>
                         </div>
@@ -130,7 +134,8 @@
                                         class="bi bi-cloud-download"></i></div>
                                 <h2 class="fs-4 fw-bold">LSTM</h2>
                                 <p class="mb-0">Folksongs from Canada</p>
-                                <midi-player src="{% static 'music/Canada_lstm.mid' %}" sound-font visualizer="#myVisualizer1">
+                                <midi-player src="{% static 'music/Canada_lstm.mid' %}" sound-font
+                                    visualizer="#myVisualizer1">
                                 </midi-player>
                             </div>
                         </div>
@@ -142,7 +147,8 @@
                                         class="bi bi-card-heading"></i></div>
                                 <h2 class="fs-4 fw-bold">LSTM</h2>
                                 <p class="mb-0">Folksongs from China</p>
-                                <midi-player src="{% static 'music/China_lstm.mid' %}" sound-font visualizer="#myVisualizer1">
+                                <midi-player src="{% static 'music/China_lstm.mid' %}" sound-font
+                                    visualizer="#myVisualizer1">
                                 </midi-player>
                             </div>
                         </div>
@@ -203,7 +209,8 @@
                                         class="bi bi-collection"></i></div>
                                 <h2 class="fs-4 fw-bold">LSTM</h2>
                                 <p class="mb-0">Folksongs from Bach</p>
-                                <midi-player src="{% static 'music/Bach_lstm.mid' %}" sound-font visualizer="#myVisualizer1">
+                                <midi-player src="{% static 'music/Bach_lstm.mid' %}" sound-font
+                                    visualizer="#myVisualizer1">
                                 </midi-player>
                             </div>
                         </div>
@@ -215,7 +222,8 @@
                                         class="bi bi-cloud-download"></i></div>
                                 <h2 class="fs-4 fw-bold">LSTM</h2>
                                 <p class="mb-0">Folksongs from Schubert</p>
-                                <midi-player src="{% static 'music/Schubert_lstm.mid' %}" sound-font visualizer="#myVisualizer1">
+                                <midi-player src="{% static 'music/Schubert_lstm.mid' %}" sound-font
+                                    visualizer="#myVisualizer1">
                                 </midi-player>
                             </div>
                         </div>
@@ -298,6 +306,11 @@
                 <midi-player src="{% static 'music/output.mid' %}" sound-font visualizer="#myVisualizer">
                 </midi-player>
                 <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+            </div>
+            <div class="text-center my-5">
+                <a href="https://e8d22j2sj3r-496ff2e9c6d22116-8000-colab.googleusercontent.com/static/music/output.mid">
+                    <button class="btn btn-primary text-uppercase fs-5">Download</button>
+                </a>
             </div>
         </div>
     </main>
