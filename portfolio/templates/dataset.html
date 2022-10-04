@@ -60,59 +60,103 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <h2 class="fs-2 fw-bold">AI Model: RNN-LSTM</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
-                        voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
-                        ducimus consectetur?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque
-                        architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae
-                        voluptatum
-                        in officia voluptas voluptatibus, minus!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi
-                        aliquid
-                        ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque
-                        sit
-                        tempora!</p>
+                    <h2 class="fs-2 fw-bold">Dataset Source:</h2>
+                    <a href="http://kern.ccarh.org" target="_blank"><img src="{% static 'images/kern_web.png' %}" alt="dataset web"
+                            width="500" title="Go to the dataset Website"></a>
+                    <p>KernScores是一個提供Humdrum檔案格式的音樂庫，其中包含了各國民謠和一些知名音樂家的創作，
+                        共超過10萬首音樂提供瀏覽者免費下載。</p>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <h2 class="fs-2 fw-bold">AI Model: Music-Transformer</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
-                        voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
-                        ducimus consectetur?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque
-                        architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae
-                        voluptatum
-                        in officia voluptas voluptatibus, minus!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi
-                        aliquid
-                        ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque
-                        sit
-                        tempora!</p>
+                    <h2 class="fs-2 fw-bold">Folksongs from Germany:</h2>
+                    <a href="http://kern.ccarh.org" target="_blank"><img src="{% static 'images/Germany_folksong.jpg' %}"
+                            width="500" alt="dataset web" title="Go to the dataset Website"></a>
+                    <p>德國民謠就以其悠雅而恬靜、輕快的節奏聞名，
+                        早在十五世紀時就已流傳各地，特別是宗教改革時代，德國民謠曾盛極一時。
+                        我們收集了超過1700首德國名謠，其中包括了Der Mond ist Aufgegangen、
+                        A A A DER WINTER DER IST DA等大家耳熟能詳的名曲。
+                        <br>
+                        <i class="fs-5 fw-bold">Soll sich der Mond nicht heller scheinen:</i>
+                        <br>
+                        <midi-player src="{% static 'music/Germany_dataset.mid' %}" sound-font visualizer="#myVisualizer1">
+                        </midi-player>
+                    </p>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <h2 class="fs-2 fw-bold">Songs Dataset: Transformer</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
-                        voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
-                        ducimus consectetur?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque
-                        architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae
-                        voluptatum
-                        in officia voluptas voluptatibus, minus!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi
-                        aliquid
-                        ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque
-                        sit
-                        tempora!</p>
+                    <h2 class="fs-2 fw-bold">Folksongs from Canada:</h2>
+                    <a href="http://kern.ccarh.org" target="_blank"><img src="{% static 'images/Canada_folksong.jpg' %}"
+                            alt="dataset web" title="Go to the dataset Website"></a>
+                    <p>加拿大民謠大多來自加拿大東南岸的新斯科細亞省，在17世紀時，除了當地的原住民米克邁克族外，來自歐洲
+                        各國的移民者也同樣居住於此，多元的文化成為了其特色，在我們收集的大約150首民謠中也同樣可以感受到當地
+                        不同文化的融合。
+                        <br>
+                        <i class="fs-5 fw-bold">The False Knight on the Road:</i>
+                        <br>
+                        <midi-player src="{% static 'music/Canada_dataset.mid' %}" sound-font visualizer="#myVisualizer1">
+                        </midi-player>
+                    </p>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2 class="fs-2 fw-bold">Folksongs from China:</h2>
+                    <a href="http://kern.ccarh.org" target="_blank"><img src="{% static 'images/China_folksong.jpg' %}"
+                            alt="dataset web" title="Go to the dataset Website"></a>
+                    <p>中國的民歌可以分為演唱的歌和用於吟誦的謠兩種形式。而中國民歌又區分了很多地區的民歌，像是中原地區和東南沿海的漢族民歌、
+                        北方草原牧區民歌......等等，因地方的民情不同而各自發展出不同風格的各地民謠。在這裡我們收集了200首的中國民謠去做我們的訓練資料
+                        <br>
+                        <i class="fs-5 fw-bold">Alamuhan:</i>
+                        <br>
+                        <midi-player src="{% static 'music/China_dataset.mid' %}" sound-font visualizer="#myVisualizer1">
+                        </midi-player>
+                    </p>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2 class="fs-2 fw-bold">Johann Sebastian Bach:</h2>
+                    <a href="http://kern.ccarh.org" target="_blank"><img src="{% static 'images/Bach.png' %}" alt="dataset web"
+                            title="Go to the dataset Website"></a>
+                    <p>約翰·塞巴斯蒂安·巴赫(Johann Sebastian Bach)
+                        巴洛克時期的作曲家及管風琴、大鍵琴、小提琴演奏家，也是巴洛克音樂的集大成者，被認為是音樂史上最重要的作曲家之一。
+                        舉凡前人至晚輩的作品，巴赫無不研究。他一生的作品極多，而其作品以質、量俱佳著稱，除了歌劇之外，他幾乎涉獵了當時所有的曲種，包含清唱劇、受難曲、神劇、經文歌、彌撒曲、聖詠、各種樂器的獨奏曲、組曲、室內樂及協奏曲等等。儘管巴赫沒有開創出新的風格，但他的創作廣納了德、意、法等國家的音樂手法，並以嫻熟的複調技巧呈現，展現了巴洛克音樂風格的精華與深奧的思想。<br>
+                        <i class="fs-5 fw-bold">Aus meines Herzens Grunde:</i>
+                        <br>
+                        <midi-player src="{% static 'music/Bach_dataset.mid' %}" sound-font visualizer="#myVisualizer1">
+                        </midi-player>
+                    </p>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2 class="fs-2 fw-bold">Franz Schubert:</h2>
+                    <a href="http://kern.ccarh.org" target="_blank"><img src="{% static 'images/Schubert.png' %}" alt="dataset web"
+                            title="Go to the dataset Website"></a>
+                    <p>法蘭茲·澤拉菲庫斯·彼得·舒伯特(Franz Seraphicus Peter Schubert)
+                        為神聖羅馬帝國奧地利作曲家，早期浪漫主義音樂的代表人物，
+                        也被認為是古典主義音樂的最後一位巨匠。雖然一生短暫，只活了31年，但他的作品卻洋溢著熱情、安詳與快樂
+                        ，一生創作了600多首歌曲，18部歌劇、歌唱劇和配劇音樂，10部交響曲，19首弦樂四重奏，
+                        22首鋼琴奏鳴曲，4首小提琴奏鳴曲以及許多其他作品，被世人稱為歌曲之王。<br>
+                        <i class="fs-5 fw-bold">Du bist die Ruh:</i>
+                        <br>
+                        <midi-player src="{% static 'music/Schubert_dataset.mid' %}" sound-font visualizer="#myVisualizer1">
+                        </midi-player>
+                    </p>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2 class="fs-2 fw-bold">Stephen Foster:</h2>
+                    <a href="http://kern.ccarh.org" target="_blank"><img src="{% static 'images/Stephen_Foster.jpg' %}"
+                            alt="dataset web" title="Go to the dataset Website"></a>
+                    <p>斯蒂芬福斯特(Stephen Foster)
+                        也被稱為“美國音樂之父”，他是一位美國的作曲家和詞曲作者，作品主要是以浪漫主義時期的客廳和吟遊詩人音樂而聞名。
+                        他創作了 200 多首歌曲，其中包括了“ Oh！Susanna ”、“ Hard Times Come Again No More ”……等等的許多至今仍然還流行的作品。
+                        他被認定為是“十九世紀最著名的作曲家”<br>
+                        <i class="fs-5 fw-bold">Hard Times Come Again No More:</i>
+                        <br>
+                        <midi-player src="{% static 'music/Stephen Foster_dataset.mid' %}" sound-font
+                            visualizer="#myVisualizer1">
+                        </midi-player>
+                    </p>
                 </div>
             </div>
         </div>
-        <h2 class="fs-2 fw-bold  text-center">Songs Dataset: LSTM</h2>
 
 
-        <h2 class="fs-2 fw-bold  text-center">Songs Dataset: Transformer</h2>
-
-
-
+         <!-- <h2 class="fs-2 fw-bold  text-center">Songs Dataset: LSTM</h2>
+        <h2 class="fs-2 fw-bold  text-center">Songs Dataset: Transformer</h2> -->
 
     </main>
 
