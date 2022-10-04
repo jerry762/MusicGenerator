@@ -64,21 +64,21 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <h2 class="fs-2 fw-bold">AI Model: RNN-LSTM</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
-                        voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
-                        ducimus consectetur?</p>
+                    <p>長短期記憶模型，又稱LSTM,是一種特殊的RNN模型，被設計用來改善RNN在長期記憶的不足，其特殊的架構可以選擇
+                        輸入的資訊是否要記錄下來還是要丟棄掉，這也使其在許多應用上都大幅改善 RNN 的效果。</p>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <h2 class="fs-2 fw-bold">AI Model: Music-Transformer</h2>
                     <p>Transformer是一種基於self-attention機制的新型神經網路架構，
-                      Google AI團隊聲稱它特別適合用於語意處裡和理解上。
-                      Transformer相比起CNN和RNN，在語言處理上有更好的表現。它有著更少的計算量，也更適合於現代的機器學習
-                      所使用的硬體，這也使其訓練的速度將會上升一個等級。</p>
+                        Google AI團隊聲稱它特別適合用於語意處裡和理解上。
+                        Transformer相比起CNN和RNN，在語言處理上有更好的表現。它有著更少的計算量，也更適合於現代的機器學習
+                        所使用的硬體，這也使其訓練的速度將會上升一個等級。</p>
                 </div>
-                
+
             </div>
         </div>
-        <h2 class="fs-2 fw-bold  text-center">Music Generation:</h2>
+        <h2 class="fs-2 fw-bold  text-center">Three Different Countries:</h2>
+        <hr>
         <section class="pt-4">
             <div class="container px-lg-5">
                 <!-- Page Features-->
@@ -165,7 +165,8 @@
             </div>
         </section>
 
-        <h2 class="fs-2 fw-bold  text-center">Music Generation:</h2>
+        <h2 class="fs-2 fw-bold  text-center">Three Different Musicians:</h2>
+        <hr>
 
         <section class="pt-4">
             <div class="container px-lg-5">
@@ -256,7 +257,8 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <h2 class="fs-2 fw-bold text-center">Generate your own music!</h2>
+                    <h2 class="fs-2 fw-bold text-center">Generate your own music !</h2>
+                    <hr>
                     <div class="my-5">
                         <form method="post" enctype="multipart/form-data" action="predict_lstm">
                             {% csrf_token %}

@@ -34,9 +34,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'music_home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'music_dataset' %}">DataSet</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'music_generation' %}">Generation</a>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'music_home' %}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{% url 'music_dataset' %}">DataSet</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{% url 'music_generation' %}">Generation</a>
                     </li>
                 </ul>
             </div>
@@ -62,22 +65,22 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <h2 class="fs-3">概述: </h2>
                     <p>在本專題中，我們先是使用了music21函式庫將Humdrum檔案轉換成我們在訓練時所需的格式，
-                      在經過資料的處理後透過LSTM模型去進行第一次的音樂生成，
-                      生成出一段鋼琴音樂，
-                      然後再將所生成的音樂利用Mangenta團隊所開發的Transformer模型去做生成伴奏的動作，
-                      藉此讓音樂整體變得沒那麼單調、更具有豐富性。
+                        在經過資料的處理後透過LSTM模型去進行第一次的音樂生成，
+                        生成出一段鋼琴音樂，
+                        然後再將所生成的音樂利用Mangenta團隊所開發的Transformer模型去做生成伴奏的動作，
+                        藉此讓音樂整體變得沒那麼單調、更具有豐富性。
                     </p>
                     <h2 class="fs-3">動機: </h2>
                     <p>我們這組的組員平常念書時都有聽鋼琴音樂的習慣，
-                      但是每次聽的鋼琴音樂常常都會是重複的，
-                      聽久了會慢慢開始覺得有點膩，
-                      這讓我們產生了我們有沒有辦法自己去創作出獨一無二的音樂，
-                      如此一來就不會因為每次聽的鋼琴音樂都是重複同樣的而感覺乏味。
-                      但是因為我們團隊內的成員都不是音樂家，
-                      繁複且艱深的樂理觀念等等的問題使我們在自己去創作出音樂的問題上會有很大的困難，
-                      這時我們想到了曾經在AI程式設計課程中學過可以利用LSTM和Transformer去做到生成音樂，
-                      透過電腦自己去生成、創作音樂。
-                      而這也使我們即使沒有專業的音樂知識背景下也能順利完成創作出鋼琴音樂的目標。
+                        但是每次聽的鋼琴音樂常常都會是重複的，
+                        聽久了會慢慢開始覺得有點膩，
+                        這讓我們產生了我們有沒有辦法自己去創作出獨一無二的音樂，
+                        如此一來就不會因為每次聽的鋼琴音樂都是重複同樣的而感覺乏味。
+                        但是因為我們團隊內的成員都不是音樂家，
+                        繁複且艱深的樂理觀念等等的問題使我們在自己去創作出音樂的問題上會有很大的困難，
+                        這時我們想到了曾經在AI程式設計課程中學過可以利用LSTM和Transformer去做到生成音樂，
+                        透過電腦自己去生成、創作音樂。
+                        而這也使我們即使沒有專業的音樂知識背景下也能順利完成創作出鋼琴音樂的目標。
                     </p>
                     <h2 class="fs-3">研究: </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi
@@ -99,6 +102,12 @@
                         <li><a href="https://colab.research.google.com/notebooks/magenta/piano_transformer/piano_transformer.ipynb#scrollTo=CFnUHAk1g_rc"
                                 target="_blank">https://colab.research.google.com/notebooks/magenta/
                                 piano_transformer/piano_transformer.ipynb#scrollTo=CFnUHAk1g_rc</a>
+                        </li>
+                        <li><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/"
+                                target="_blank">https://colah.github.io/posts/2015-08-Understanding-LSTMs/</a>
+                        </li>
+                        <li><a href="https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html"
+                                target="_blank">https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html</a>
                         </li>
                     </ul>
                 </div>
