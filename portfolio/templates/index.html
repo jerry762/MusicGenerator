@@ -83,9 +83,24 @@
                         而這也使我們即使沒有專業的音樂知識背景下也能順利完成創作出鋼琴音樂的目標。
                     </p>
                     <h2 class="fs-3">研究: </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi
-                        aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste
-                        neque sit tempora!</p>
+                    <p>當我們這組決定要做音樂生成時,其實前期有一點手足無措且不知要從哪裡開始與怎麼下手,於是我們就Google上網找音樂生成之相關資料,查閱與過濾
+                        很多資料之後,我們發現蠻多人使用RNN-LSTM來生成音樂,RNN-LSTM神經網路蠻適合拿來做有連續資料的訓練 例如:自然語言處理,時間序列,情感分析,手寫辨識
+                        等 音樂事實上也是一連串序列,不同於一般文章,音樂由演奏家藉由樂譜與樂器把音樂彈奏出來變成音樂,而樂譜則由許許多多的音符組成,而這些音符的每個
+                        音高都有它們自己的記號,這些記號稱作科學音高記號(Scientific pitch notation,SPN)或國際音高記號(International pitch
+                        notation,IPN),但這些記號
+                        無法被電腦讀取,所以就需要靠MIDI note number把每個記號轉換成數字,當然這些數字也都一一對應每個記號,變成數字後電腦就能判讀了,於是我們就
+                        藉由網路上的教程,找到music21這個python函式庫(主要在做音樂分析),與資料集(krn樂譜),有了編成環境與資料集和資源之後我們就開始做樂譜的前處理
+                        首先我們先把每一首歌讀進來,在進行轉調,轉調可以使未來生成音樂時使樂曲的音調保持一致,保持音樂的完整性,轉調之後還要把每一首樂曲經由music21的函式,轉換
+                        成MIDI note number,然後再集結成單一資料集檔案,接著還需要一個Map,這個Map是在記錄一個資料集中整首曲子的音調(輸出)有幾個再一一對應 例如:{Do, Re, Mi,
+                        Fa, So, La, Ti}
+                        假設它的MIDI note number是{12, 3, 59, 45, 23, 17, 36}則它的Map就是{0:12, 1:3, 2:59, 3:45, 4:23, 5:17,
+                        6:36},然後我們再把單一資料集檔案
+                        做one-hot encoding就完成資料集的前處理,做完前處理後就要開始準備訓練了,首先我們需要給定一些訓練的參數 如:模型的儲存位置,學習率,loss函式,訓練次數
+                        ,輸出大小(預測值的範圍)和訓練大小等,之後就可以訓練了,當資料量愈大相對的訓練時間愈久,訓練完成後就可以開始生成音樂了,首先我們需要設定種子,種子
+                        由幾個音符組成(用來預測用)和剛剛訓練好的模型,然後把種子由之前的Map轉成對應的範圍編號再做one-hot encoding,就可以丟到模型裡做預測了,每一次
+                        預測會產生一個音符,而音符會加在種子的後面直到預測結束,最後我們再建立music21 stream物件,把剛生成出的音樂加入到music21 stream的物件裡,再使用
+                        music21 stream物件的方法把音樂匯出成mid檔,完成音樂生成,後來我們覺得LSTM生出的音樂過於單調,在找資料的過程中發現了一種叫Transformer新型的神經網路模型,
+                        深入研究後,發現Google magenta團隊的Transformer模型可以用來為我們生成好的音樂進行第二次的訓練並加上伴奏,使原本的樂曲變得更加豐富,達到畫龍點睛的效果。</p>
                     <h2 class="fs-3">參考: </h2>
                     <ul>
                         <li><a href="https://arxiv.org/pdf/1809.04281.pdf"
