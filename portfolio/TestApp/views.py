@@ -11,25 +11,37 @@ import tensorflow as tf
 
 APP_BASE_DIR = Path(__file__).resolve().parent
 SAVA_MIDI_DIR = Path.joinpath(Path(__file__).resolve().parent.parent, 'static_test/music/output.mid')
-MAPPING_PATH = Path.joinpath(APP_BASE_DIR, 'mapping/mapping.json')
-SAVE_LSTM_MODEL_PATH = Path.joinpath(APP_BASE_DIR, 'models/model.h5')
+
+MAPPINGS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Germany.json'),
+                 '2': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Canada.json'),
+                 '3': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_China.json'),
+                 '4': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Bach.json'),
+                 '5': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Schubert.json'),
+                 '6': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Foster.json')}
+
+SAVE_LSTM_MODELS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'models/model_Germany.h5'),
+                         '2': Path.joinpath(APP_BASE_DIR, 'models/model_Canada.h5'),
+                         '3': Path.joinpath(APP_BASE_DIR, 'models/model_China.h5'),
+                         '4': Path.joinpath(APP_BASE_DIR, 'models/model_Bach.h5'),
+                         '5': Path.joinpath(APP_BASE_DIR, 'models/model_Schubert.h5'),
+                         '6': Path.joinpath(APP_BASE_DIR, 'models/model_Foster.h5')}
 
 SEQUENCE_LENGTH = 64
+
 
 class MelodyGenerator:
     """A class that wraps the LSTM model and offers utilities to generate melodies."""
 
-    def __init__(self, model_path = SAVE_LSTM_MODEL_PATH):
+    def __init__(self, model_path, mapping_path):
         """Constructor that initialises TensorFlow model"""
 
         self.model_path = model_path
         self.model = tf.keras.models.load_model(model_path)
 
-        with open(MAPPING_PATH, "r") as fp:
+        with open(mapping_path, "r") as fp:
             self._mappings = json.load(fp)
 
         self._start_symbols = ["/"] * SEQUENCE_LENGTH
-
 
     def generate_melody(self, seed, num_steps, max_sequence_length, temperature):
         """Generates a melody using the DL model and returns a midi file.
@@ -81,7 +93,6 @@ class MelodyGenerator:
 
         return melody
 
-
     def _sample_with_temperature(self, probabilites, temperature):
         """Samples an index from a probability array reapplying softmax using temperature
 
@@ -94,13 +105,12 @@ class MelodyGenerator:
         predictions = np.log(probabilites) / temperature
         probabilites = np.exp(predictions) / np.sum(np.exp(predictions))
 
-        choices = range(len(probabilites)) # [0, 1, 2, 3]
+        choices = range(len(probabilites))  # [0, 1, 2, 3]
         index = np.random.choice(choices, p=probabilites)
 
         return index
 
-
-    def save_melody(self, melody, step_duration=0.25, format="midi", file_name = SAVA_MIDI_DIR):
+    def save_melody(self, melody, step_duration=0.25, format="midi", file_name=SAVA_MIDI_DIR):
         """Converts a melody into a MIDI file
 
         :param melody (list of str):
@@ -124,7 +134,7 @@ class MelodyGenerator:
                 # ensure we're dealing with note/rest beyond the first one
                 if start_symbol is not None:
 
-                    quarter_length_duration = step_duration * step_counter # 0.25 * 4 = 1
+                    quarter_length_duration = step_duration * step_counter  # 0.25 * 4 = 1
 
                     # handle rest
                     if start_symbol == "r":
@@ -149,40 +159,47 @@ class MelodyGenerator:
         stream.write(format, file_name)
 
 
-
-
 def test(request):
-  return HttpResponse("hello world")
+    return HttpResponse("hello world")
+
 
 @csrf_exempt
 def index(request):
-  return render(request,'index.html')
+    return render(request, 'index.html')
+
 
 @csrf_exempt
 def predict_lstm(request):
+    if request.method == 'POST':
+        key = request.POST.get('models')
+    else:
+        print("Not catch the POST value")
 
-  mg = MelodyGenerator()
+    # print(SAVE_LSTM_MODELS_PATH[key])
+    # print(MAPPINGS_PATH[key])
 
-  seed = "67 _ 67 _ 67 _ _ 65 64 _ 64 _ 64 _ _"
-  seed2 = "60 _ 60 _ 67 _ 67 _ 69 _ 69 _ 67 _"
-  seed3 = "67 _ 72 _ 67 _ 65 _ 67 _ _ _"
-  
-  melody = mg.generate_melody(seed3, 500, SEQUENCE_LENGTH * 2, 0.3)
-  mg.save_melody(melody)
- 
-  return render(request,'generation.html')
+    mg = MelodyGenerator(SAVE_LSTM_MODELS_PATH[key], MAPPINGS_PATH[key])
+
+    seed = "67 _ 67 _ 67 _ _ 65 64 _ 64 _ 64 _ _"
+    seed2 = "60 _ 60 _ 67 _ 67 _ 69 _ 69 _ 67 _"
+    seed3 = "67 _ 72 _ 67 _ 65 _ 67 _ _ _"
+
+    melody = mg.generate_melody(seed3, 500, SEQUENCE_LENGTH * 2, 0.3)
+    mg.save_melody(melody)
+
+    return render(request, 'generation.html')
+
 
 @csrf_exempt
 def music_dataset(request):
-  return render(request,'dataset.html')
+    return render(request, 'dataset.html')
+
 
 @csrf_exempt
 def music_generation(request):
-  return render(request,'generation.html')
+    return render(request, 'generation.html')
+
 
 @csrf_exempt
 def music_home(request):
-  return render(request,'index.html')
-
-
-  
+    return render(request, 'index.html')

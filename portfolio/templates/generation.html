@@ -262,6 +262,15 @@
                     <div class="my-5">
                         <form method="post" enctype="multipart/form-data" action="predict_lstm">
                             {% csrf_token %}
+                            <select name="models" class="form-select form-select-lg mb-5" required>
+                                <option selected disabled value="">Select the models</option>
+                                <option value='1'>Germany</option>
+                                <option value='2'>Canada</option>
+                                <option value='3'>China</option>
+                                <option value='4'>Johann Sebastian Bach</option>
+                                <option value='5'>Franz Schubert</option>
+                                <option value='6'>Stephen Foster</option>
+                            </select>
                             <div class="text-center">
 
                                 <button class="btn btn-primary text-uppercase fs-5" id="submitButton"
