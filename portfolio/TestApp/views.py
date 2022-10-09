@@ -18,13 +18,12 @@ MAPPINGS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Africa.json'
                  '3': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_British.json'),
                  '4': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Canada.json'),
                  '5': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_China.json'),
-                 '6': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Foster.json'),
-                 '7': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_France.json'),
-                 '8': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Germany.json'),
-                 '9': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Ireland.json'),
-                 '10': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Luxembourg.json'),
-                 '11': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Pentatonic.json'),
-                 '12': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Poland.json')}
+                 '6': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_France.json'),
+                 '7': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Germany.json'),
+                 '8': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Ireland.json'),
+                 '9': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Luxembourg.json'),
+                 '10': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Pentatonic.json'),
+                 '11': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Poland.json')}
 
 
 SAVE_LSTM_MODELS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'models/model_Africa.h5'),
@@ -32,13 +31,12 @@ SAVE_LSTM_MODELS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'models/model_Africa.h
                          '3': Path.joinpath(APP_BASE_DIR, 'models/model_British.h5'),
                          '4': Path.joinpath(APP_BASE_DIR, 'models/model_Canada.h5'),
                          '5': Path.joinpath(APP_BASE_DIR, 'models/model_China.h5'),
-                         '6': Path.joinpath(APP_BASE_DIR, 'models/model_Foster.h5'),
-                         '7': Path.joinpath(APP_BASE_DIR, 'models/model_France.h5'),
-                         '8': Path.joinpath(APP_BASE_DIR, 'models/model_Germany.h5'),
-                         '9': Path.joinpath(APP_BASE_DIR, 'models/model_Ireland.h5'),
-                         '10': Path.joinpath(APP_BASE_DIR, 'models/model_Luxembourg.h5'),
-                         '11': Path.joinpath(APP_BASE_DIR, 'models/model_Pentatonic.h5'),
-                         '12': Path.joinpath(APP_BASE_DIR, 'models/model_Poland.h5')}
+                         '6': Path.joinpath(APP_BASE_DIR, 'models/model_France.h5'),
+                         '7': Path.joinpath(APP_BASE_DIR, 'models/model_Germany.h5'),
+                         '8': Path.joinpath(APP_BASE_DIR, 'models/model_Ireland.h5'),
+                         '9': Path.joinpath(APP_BASE_DIR, 'models/model_Luxembourg.h5'),
+                         '10': Path.joinpath(APP_BASE_DIR, 'models/model_Pentatonic.h5'),
+                         '11': Path.joinpath(APP_BASE_DIR, 'models/model_Poland.h5')}
 
 SEQUENCE_LENGTH = 64
 
@@ -201,8 +199,6 @@ def predict_lstm(request):
              "60 _ 60 _ 67 _ 67 _ 69 _ 69 _ 67"]
 
     rand_int = random.randint(0, 4)
-
-    
 
     melody = mg.generate_melody(seeds[rand_int], 500, SEQUENCE_LENGTH * 2, 0.3)
     mg.save_melody(melody)
