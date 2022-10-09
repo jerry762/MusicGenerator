@@ -8,6 +8,7 @@ import json
 import music21 as m21
 import numpy as np
 import tensorflow as tf
+import random
 
 APP_BASE_DIR = Path(__file__).resolve().parent
 SAVA_MIDI_DIR = Path.joinpath(Path(__file__).resolve().parent.parent, 'static_test/music/output.mid')
@@ -193,11 +194,17 @@ def predict_lstm(request):
 
     mg = MelodyGenerator(SAVE_LSTM_MODELS_PATH[key], MAPPINGS_PATH[key])
 
-    seed = "67 _ 67 _ 67 _ _ 65 64 _ 64 _ 64 _ _"
-    seed2 = "60 _ 60 _ 67 _ 67 _ 69 _ 69 _ 67 _"
-    seed3 = "67 _ 72 _ 67 _ 65 _ 67 _ _ _"
+    seeds = ["67 _ 67 _ 67 _ _ 65 64 _ 64 _ 64 _ _",
+             "60 _ 60 _ 67 _ 67 _ 69 _ 69 _ 67 _",
+             "67 _ 72 _ 67 _ 65 _ 67 _ _ _",
+             "64 _ 62 _ 60 _ 62 _ 64 _ 64 _ 64 _",
+             "60 _ 60 _ 67 _ 67 _ 69 _ 69 _ 67"]
 
-    melody = mg.generate_melody(seed3, 500, SEQUENCE_LENGTH * 2, 0.3)
+    rand_int = random.randint(0, 4)
+
+    
+
+    melody = mg.generate_melody(seeds[rand_int], 500, SEQUENCE_LENGTH * 2, 0.3)
     mg.save_melody(melody)
 
     return render(request, 'generation.html')
