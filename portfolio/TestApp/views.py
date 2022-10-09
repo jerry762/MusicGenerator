@@ -12,19 +12,32 @@ import tensorflow as tf
 APP_BASE_DIR = Path(__file__).resolve().parent
 SAVA_MIDI_DIR = Path.joinpath(Path(__file__).resolve().parent.parent, 'static_test/music/output.mid')
 
-MAPPINGS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Germany.json'),
-                 '2': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Canada.json'),
-                 '3': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_China.json'),
-                 '4': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Bach.json'),
-                 '5': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Schubert.json'),
-                 '6': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Foster.json')}
+MAPPINGS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Africa.json'),
+                 '2': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_America.json'),
+                 '3': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_British.json'),
+                 '4': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Canada.json'),
+                 '5': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_China.json'),
+                 '6': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Foster.json'),
+                 '7': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_France.json'),
+                 '8': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Germany.json'),
+                 '9': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Ireland.json'),
+                 '10': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Luxembourg.json'),
+                 '11': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Pentatonic.json'),
+                 '12': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Poland.json')}
 
-SAVE_LSTM_MODELS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'models/model_Germany.h5'),
-                         '2': Path.joinpath(APP_BASE_DIR, 'models/model_Canada.h5'),
-                         '3': Path.joinpath(APP_BASE_DIR, 'models/model_China.h5'),
-                         '4': Path.joinpath(APP_BASE_DIR, 'models/model_Bach.h5'),
-                         '5': Path.joinpath(APP_BASE_DIR, 'models/model_Schubert.h5'),
-                         '6': Path.joinpath(APP_BASE_DIR, 'models/model_Foster.h5')}
+
+SAVE_LSTM_MODELS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'models/model_Africa.h5'),
+                         '2': Path.joinpath(APP_BASE_DIR, 'models/model_America.h5'),
+                         '3': Path.joinpath(APP_BASE_DIR, 'models/model_British.h5'),
+                         '4': Path.joinpath(APP_BASE_DIR, 'models/model_Canada.h5'),
+                         '5': Path.joinpath(APP_BASE_DIR, 'models/model_China.h5'),
+                         '6': Path.joinpath(APP_BASE_DIR, 'models/model_Foster.h5'),
+                         '7': Path.joinpath(APP_BASE_DIR, 'models/model_France.h5'),
+                         '8': Path.joinpath(APP_BASE_DIR, 'models/model_Germany.h5'),
+                         '9': Path.joinpath(APP_BASE_DIR, 'models/model_Ireland.h5'),
+                         '10': Path.joinpath(APP_BASE_DIR, 'models/model_Luxembourg.h5'),
+                         '11': Path.joinpath(APP_BASE_DIR, 'models/model_Pentatonic.h5'),
+                         '12': Path.joinpath(APP_BASE_DIR, 'models/model_Poland.h5')}
 
 SEQUENCE_LENGTH = 64
 
