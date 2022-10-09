@@ -13,30 +13,31 @@ import random
 APP_BASE_DIR = Path(__file__).resolve().parent
 SAVA_MIDI_DIR = Path.joinpath(Path(__file__).resolve().parent.parent, 'static_test/music/output.mid')
 
-MAPPINGS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Africa.json'),
-                 '2': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_America.json'),
-                 '3': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_British.json'),
-                 '4': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Canada.json'),
-                 '5': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_China.json'),
-                 '6': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_France.json'),
-                 '7': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Germany.json'),
-                 '8': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Ireland.json'),
-                 '9': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Luxembourg.json'),
-                 '10': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Pentatonic.json'),
-                 '11': Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Poland.json')}
+MAPPINGS_PATH = [Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Africa.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_America.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_British.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Canada.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_China.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_France.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Germany.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Ireland.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Luxembourg.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Pentatonic.json'),
+                 Path.joinpath(APP_BASE_DIR, 'mappings/mapping_Poland.json')]
 
 
-SAVE_LSTM_MODELS_PATH = {'1': Path.joinpath(APP_BASE_DIR, 'models/model_Africa.h5'),
-                         '2': Path.joinpath(APP_BASE_DIR, 'models/model_America.h5'),
-                         '3': Path.joinpath(APP_BASE_DIR, 'models/model_British.h5'),
-                         '4': Path.joinpath(APP_BASE_DIR, 'models/model_Canada.h5'),
-                         '5': Path.joinpath(APP_BASE_DIR, 'models/model_China.h5'),
-                         '6': Path.joinpath(APP_BASE_DIR, 'models/model_France.h5'),
-                         '7': Path.joinpath(APP_BASE_DIR, 'models/model_Germany.h5'),
-                         '8': Path.joinpath(APP_BASE_DIR, 'models/model_Ireland.h5'),
-                         '9': Path.joinpath(APP_BASE_DIR, 'models/model_Luxembourg.h5'),
-                         '10': Path.joinpath(APP_BASE_DIR, 'models/model_Pentatonic.h5'),
-                         '11': Path.joinpath(APP_BASE_DIR, 'models/model_Poland.h5')}
+SAVE_LSTM_MODELS_PATH = [Path.joinpath(APP_BASE_DIR, 'models/model_Africa.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_America.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_British.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_Canada.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_China.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_France.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_Germany.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_Ireland.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_Luxembourg.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_Pentatonic.h5'),
+                         Path.joinpath(APP_BASE_DIR, 'models/model_Poland.h5')]
+
 
 SEQUENCE_LENGTH = 64
 
@@ -183,7 +184,7 @@ def index(request):
 @csrf_exempt
 def predict_lstm(request):
     if request.method == 'POST':
-        key = request.POST.get('models')
+        key = int(request.POST.get('models'))
     else:
         print("Not catch the POST value")
 
