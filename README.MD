@@ -97,12 +97,10 @@
 │       ├── Stephen_Foster_transformer.mid
 │       ├── accompaniment.mid
 │       └── output.mid
-├── templates
-│   ├── dataset.html
-│   ├── generation.html
-│   └── index.html
-└── text.txt
+└── templates
+    ├── dataset.html
+    ├── generation.html
+    └── index.html
 
-15 directories, 85 files
-
+15 directories, 84 files
 ```
