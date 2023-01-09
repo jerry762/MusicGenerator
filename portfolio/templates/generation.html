@@ -260,7 +260,7 @@
                     <h2 class="fs-2 fw-bold text-center">Generate your own music !</h2>
                     <hr>
                     <div class="my-5">
-                        <form method="post" enctype="multipart/form-data" action="predict_lstm">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="predict_lstm">
                             {% csrf_token %}
                             <select name="models" class="form-select form-select-lg mb-5" required>
                                 <option selected disabled value="">Select the models</option>
