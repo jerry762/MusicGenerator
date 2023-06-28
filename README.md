@@ -1,4 +1,4 @@
-# TTU AI Music Generation Project  
+# TTU CSE AI Music Generation Project  
 
 <img src="images/sheet_music.jpg" height="400" width="800" />
 
