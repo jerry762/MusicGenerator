@@ -41,11 +41,13 @@
 
 ## Website Presentation  
 
-<img src="images/1.png" height="200" width="500"/>
+<img src="images/index.png" height="200" width="500"/>
 
-<img src="images/2.png" height="200" width="500"/>
+<img src="images/dataset.jpg" height="200" width="500"/>
 
-<img src="images/3.png" height="200" width="500"/>
+<img src="images/music.png" height="200" width="500"/>
+
+<img src="images/generate.png" height="200" width="500"/>
 
 
 ## References  
