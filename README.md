@@ -35,12 +35,6 @@
 
 <img src="images/3.png" height="200" width="500"/>
 
-<img src="images/4.png" height="200" width="500"/>
-
-<img src="images/5.png" height="200" width="500"/>
-
-<img src="images/6.png" height="200" width="500"/>
-
 ## Project Structure  
 
 ```
