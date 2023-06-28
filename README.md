@@ -17,17 +17,23 @@
 
 ### Step 1: Go to my [colab](https://colab.research.google.com/drive/1VRnq9hjKyu-JEpGC2bWl6-L3nZtOlzEi?usp=sharing)  
 
-### Step 2: <img src="images/step1.png" height="60" width="500" />  
+### Step 2: 
+<img src="images/step1.png" height="60" width="500" />  
 
-### Step 3: <img src="images/step2.png" height="60" width="500" />  
+### Step 3: 
+<img src="images/step2.png" height="60" width="500" />  
 
-### Step 4: <img src="images/step3.png" height="60" width="500" />  
+### Step 4: 
+<img src="images/step3.png" height="60" width="500" />  
 
-### Step 5: <img src="images/step4.png" height="60" width="500" />  
+### Step 5: 
+<img src="images/step4.png" height="60" width="500" />  
 
-### Step 6: <img src="images/step5.png" height="60" width="500" />  
+### Step 6: 
+<img src="images/step5.png" height="60" width="500" />  
 
-### Step 7: Click this link <img src="images/step6.png" height="80" width="500" />  
+### Step 7: Click this link 
+<img src="images/step6.png" height="80" width="500" />  
 
 
 ## Website Presentation  
