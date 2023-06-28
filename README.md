@@ -1,6 +1,6 @@
 # TTU AI Music Generation Project  
 
-![sheet music](images/sheet_music.jpg)
+![sheet music](images/sheet_music.jpg | width=100)
 
   - [Project Advisor](https://tchinfo.ttu.edu.tw/tchinfo.php?id=chingyeh)
   - [Senior Project Report](#)
