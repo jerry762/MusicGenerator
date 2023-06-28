@@ -13,6 +13,8 @@
 在本專題中，我們先是使用了[music21函式庫](http://web.mit.edu/music21/)將從[KernScores](http://kern.ccarh.org/)下載下來的Humdrum檔案轉換成我們在訓練時所需的格式，在經過資料的處理後透過[LSTM模型](https://en.wikipedia.org/wiki/Long_short-term_memory)去進行第一次的生成，生成出一段音樂的主旋律，然後再將所生成的旋律利用[Google Magenta團隊](https://magenta.tensorflow.org/music-transformer)所開發的[Transformer模型](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model))去做生成伴奏的動作，
 藉此讓音樂整體變得沒那麼單調、更具有豐富性。  
 
+<img src="images/flow_chart.png" height="300" />  
+
 
 ## Running  
 
@@ -46,7 +48,7 @@
 <img src="images/3.png" height="200" width="500"/>
 
 
-## Reference  
+## References  
 
 [https://arxiv.org/ftp/arxiv/papers/1804/1804.07300.pdf](https://arxiv.org/ftp/arxiv/papers/1804/1804.07300.pdf)
 
