@@ -29,18 +29,17 @@
 
 ## Website Presentation  
 
-![1](images/1.png)
+<img src="images/1.png" height="200" width="500"/>
 
-![2](images/2.png)
+<img src="images/2.png" height="200" width="500"/>
 
-![3](images/3.png)
+<img src="images/3.png" height="200" width="500"/>
 
-![4](images/4.png)
+<img src="images/4.png" height="200" width="500"/>
 
-![5](images/5.png)  
+<img src="images/5.png" height="200" width="500"/>
 
-![6](images/6.png)
-
+<img src="images/6.png" height="200" width="500"/>
 
 ## Project Structure  
 
