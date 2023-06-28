@@ -1,6 +1,6 @@
 # TTU AI Music Generation Project  
 
-<img src="images/sheet_music.jpg" width="800" />
+<img src="images/sheet_music.jpg" height="300" />
 
 
   - [Project Advisor](https://tchinfo.ttu.edu.tw/tchinfo.php?id=chingyeh)
